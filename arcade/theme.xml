@@ -1,0 +1,40 @@
+<!--
+theme name:		Angular
+version:		1.0
+author:			Lilbud
+email:			bvw20002010@gmail.com
+license:		creative commons CC-BY-NC-SA 
+-->
+
+<theme>
+	<formatVersion>4</formatVersion>
+	
+	<!-- Base theme file -->
+	
+	<include>./../theme.xml</include>
+
+	<!-- Image positioning/size overrides for arcade titles (where we have a mix of portrait and landscape images) -->
+
+	<view name="detailed">
+		
+		<!-- Center in the space, expand to bounds -->
+		<image name="md_image">
+			<origin>0.5 0.5</origin>
+			<pos>0.28125 0.5</pos>
+			<maxSize>1 1</maxSize>
+		</image>
+		
+	</view>
+	
+	<view name="video">
+		
+		<!-- Same with video previews! -->
+		<video name="md_video">
+			<origin>0.5 0.5</origin>
+			<pos>0.28125 0.5</pos>
+			<maxSize>1 1</maxSize>
+		</video>
+		
+	</view>
+</theme>
+			

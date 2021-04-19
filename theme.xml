@@ -1,0 +1,496 @@
+<!--
+theme name:		Clean
+version:		1.0
+author:			philcsf
+email:			nearlyphil@gmail.com
+license:		creative commons CC-BY-NC-SA
+-->
+
+<theme>
+	<formatVersion>4</formatVersion>
+	
+	<variables>
+		<systemBackgroundColor>1e1e1e</systemBackgroundColor>
+		<systemForegroundColor>fafafa</systemForegroundColor>
+		<systemFont>./assets/fonts/Product Sans Regular.ttf</systemFont>
+		<systemFontLogo>./assets/fonts/Product Sans Bold Italic.ttf</systemFontLogo>
+		<helpVertAlignment>0.935</helpVertAlignment>
+	</variables>
+
+	<!-- SHARED PROPERTIES ACROSS ALL MENUS -->
+	
+	<view name="system, basic, detailed, video, grid">
+
+		<!-- Solid background using system color -->
+		<image name="safe_check" extra="true">
+			<path>./assets/safearea.png</path>
+			<pos>0 0</pos>
+			<size>1 1</size>
+			<zIndex>100</zIndex>
+			<visible>0</visible>
+		</image>
+	
+		<!-- Solid background using system color -->
+		<image name="background_color" extra="true">
+			<path>./assets/box.png</path>
+			<color>${systemBackgroundColor}</color>
+			<pos>0 0</pos>
+			<size>1 1</size>
+			<zIndex>1</zIndex>
+		</image>
+	
+	</view>
+	
+	<view name="system, basic, detailed, video">
+	
+		<!-- Sidebar goes above any image/video preview on left -->
+		<image name="sidebar" extra="true">
+			<path>./assets/box.png</path>
+			<color>${systemBackgroundColor}</color>	
+			<zIndex>35</zIndex>
+			<pos>0.5625 0</pos>
+			<origin>0 0</origin>	
+			<size>0.4375 1</size>
+		</image>
+		
+	</view>
+	
+	<!-- MAIN SYSTEM MENU -->
+	
+	<view name="system">
+
+		<text name="systemInfo">
+			<color>${systemForegroundColor}</color>
+			<pos>0.78125 0.065</pos>
+			<origin>0.5 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<fontPath>${systemFont}</fontPath>
+			<forceUppercase>0</forceUppercase>
+			<zIndex>80</zIndex>
+		</text>
+		
+		<image name="dividerline_top" extra="true">
+			<path>./assets/box.png</path>
+			<color>848484</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.1</pos>
+			<size>0.365 0.002</size>
+			<zIndex>71</zIndex>
+		</image>
+	
+		<image name="logo">
+			<path>./assets/logos/${system.theme}.svg</path>
+			<color>${systemForegroundColor}</color>
+			<maxSize>0.21815519765 0.6614583</maxSize>
+			<origin>0 0</origin>
+			<pos>0.6610541727672036 0.169270831</pos>
+		</image>
+		
+		<text name="logoText">
+			<fontPath>${systemFontLogo}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<fontSize>0.08</fontSize>
+			<forceUppercase>true</forceUppercase>
+		</text>		
+
+		<!-- System image (from COLORFUL videos) -->
+		<image name="system_image" extra="true">
+			<path>./assets/backgrounds/${system.theme}.png</path>
+			<origin>0.5 0.5</origin>
+			<pos>0.28125 0.5</pos>
+			<maxSize>1 1</maxSize>
+			<zIndex>30</zIndex>
+		</image>
+
+		<image name="dividerline_bottom" extra="true">
+			<path>./assets/box.png</path>
+			<color>848484</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.900</pos>
+			<size>0.365 0.002</size>
+			<zIndex>71</zIndex>
+		</image>
+
+		<image name="help_system_menu_icon" extra="true">
+			<path>./assets/buttons/button_start.svg</path>
+			<color>${systemForegroundColor}</color>
+			<pos>0.67 ${helpVertAlignment}</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.03 0.03</size>
+			<zIndex>80</zIndex>
+		</image>
+		<text name="help_system_menu" extra="true">
+			<text>MENU</text>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<pos>0.676 ${helpVertAlignment}</pos>
+			<origin>0 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<zIndex>80</zIndex>
+		</text>
+		
+		<image name="help_system_random_icon" extra="true">
+			<path>./assets/buttons/button_x.svg</path>
+			<color>${systemForegroundColor}</color>
+			<pos>0.75 ${helpVertAlignment}</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.03 0.03</size>
+			<zIndex>80</zIndex>
+		</image>
+		<text name="help_system_random" extra="true">
+			<text>RANDOM</text>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<pos>0.756 ${helpVertAlignment}</pos>
+			<origin>0 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<zIndex>80</zIndex>
+		</text>
+
+		<image name="help_system_select_icon" extra="true">
+			<path>./assets/buttons/button_a.svg</path>
+			<color>${systemForegroundColor}</color>
+			<pos>0.855 ${helpVertAlignment}</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.03 0.03</size>
+			<zIndex>80</zIndex>
+		</image>		
+		<text name="help_system_select" extra="true">
+			<text>SELECT</text>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<pos>0.861 ${helpVertAlignment}</pos>
+			<origin>0 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<zIndex>80</zIndex>
+		</text>
+		
+		<carousel name="systemcarousel">
+			<type>vertical</type>
+			<pos>0.78125 0.5</pos> 
+			<size>0.365 0.8</size>
+			<origin>0.5 0.5</origin>
+			<color>00000000</color>
+			<logoScale>1.6</logoScale>
+			<logoSize>0.16 0.58</logoSize>
+			<maxLogoCount>5</maxLogoCount>
+			<zIndex>80</zIndex>
+		</carousel>
+		
+		<image name="carousel_bgalign">		
+			<path>./assets/box.png</path>	
+			<color>aaaaaaaa</color>			
+			<pos>0.78125 0.5</pos> 
+			<size>0.365 0.8</size>
+			<origin>0.5 0.5</origin>
+			<zIndex>80</zIndex>
+		</image>
+		
+	</view>
+	
+	<view name="basic">
+		
+		<image name="none" extra="true">
+			<path>./assets/default.png</path>
+			<zIndex>69</zIndex>
+			<pos>0 0</pos>
+			<size>0.6 1</size>
+		</image>
+		
+	</view>
+	
+	<view name="detailed, video">
+
+		<!-- Black background behind any preview image/video in case the resize don't fill the space -->
+		<image name="md_image_bg" extra="true">
+			<path>./assets/box.png</path>
+			<color>000000</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.28125 0.5</pos>
+			<size>0.5625 1</size>
+			<zIndex>29</zIndex>
+		</image>		
+		
+		<!-- Expand from the left to max height, as keeping left-side of any game UI looks better than a fully-centered image -->
+		<!-- The 'arcade' content directory overrides this to work better for a mix of landscape and portrait images -->
+		<image name="md_image">
+			<origin>0.0 0.5</origin>
+			<pos>0.0 0.5</pos>
+			<maxSize>1 1</maxSize>
+			<zIndex>30</zIndex>
+		</image>
+		
+		<image name="md_marquee" extra="true">
+			<origin>0.5 0.5</origin>
+			<zIndex>72</zIndex>
+			<pos>0.34 0.8828125</pos>
+			<maxSize>0.268  0.15625</maxSize>
+		</image>
+		
+		<text name="md_description">
+			<forceUppercase>0</forceUppercase>
+			<zIndex>72</zIndex>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<fontSize>0.024</fontSize>
+			<size>0.345 0.14</size>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.8175</pos>
+		</text>
+
+		<image name="md_description_bg_placement" extra="true">
+			<path>./assets/box.png</path>
+			<color>aaaaaa00</color>
+			<size>0.345 0.14</size>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.8175</pos>
+			<zIndex>79</zIndex>
+		</image>
+
+		
+		<text name="md_lbl_developer, md_developer, md_lbl_publisher, md_publisher, md_lbl_releasedate, md_lbl_players, md_players">
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<zIndex>71</zIndex>
+			<origin>0 1</origin>
+			<size>0.375 0.027</size>
+		</text> 
+		
+		<datetime name="md_releasedate">
+			<format>%Y</format>
+			<zIndex>71</zIndex>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<origin>0 1</origin>
+			<size>0.375 0.027</size>
+		</datetime>
+		
+		<text name="md_lbl_developer, md_developer, md_lbl_publisher, md_publisher, md_lbl_releasedate, md_lbl_players, md_players">
+			<fontSize>0.027</fontSize>
+		</text> 
+		<datetime name="md_releasedate">			
+			<fontSize>0.027</fontSize>
+		</datetime>
+
+		<!--- LABEL POSITIONS -->
+		<text name="md_lbl_developer">
+			<pos>0.0475 0.815</pos>
+		</text>
+		<text name="md_lbl_publisher">
+			<pos>0.0475 0.86</pos>
+		</text>
+		<text name="md_lbl_releasedate">
+			<pos>0.0475 0.905</pos>
+		</text>
+		<text name="md_lbl_players">
+			<pos>0.0475 0.95</pos>
+		</text>
+
+		<!--- DATA POSITIONS -->
+		<text name="md_developer">
+			<pos>0.14 0.815</pos>
+		</text>
+		<text name="md_publisher">
+			<pos>0.14 0.86</pos>
+		</text>		
+		<datetime name="md_releasedate">
+			<pos>0.14 0.905</pos>
+		</datetime>
+		<text name="md_players">
+			<pos>0.14 0.95</pos>
+		</text>
+		
+	</view>
+	
+	<view name="basic, detailed, video">
+		
+		<image name="gradientbar" extra="true">
+			<path>./assets/box.png</path>
+			<color>00000095</color>
+			<origin>0 1</origin>
+			<pos>0 1</pos>
+			<size>0.78125 0.265</size>
+			<zIndex>31</zIndex>
+		</image>
+		
+		<!-- HIDE UNUSED LABELS-->
+		<text name="md_lbl_lastplayed, md_lbl_rating, md_lbl_playcount, md_playcount">
+			<pos>1 1</pos>
+		</text>
+		
+		<image name="logo">		
+			<path>./assets/logos/${system.theme}.svg</path>		
+			<zIndex>72</zIndex>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.1</pos>		
+			<maxSize>0.28 0.1</maxSize>
+		</image>
+		
+		<text name="logoText">
+			<fontPath>${systemFontLogo}</fontPath>
+			<fontSize>0.08</fontSize>
+			<color>${systemForegroundColor}</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.095</pos>	
+			<forceUppercase>true</forceUppercase>
+		</text>		
+		
+		<image name="logo_bgalign">		
+			<path>./assets/box.png</path>	
+			<color>aaaaaaaa</color>			
+			<zIndex>72</zIndex>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.1</pos>	
+			<size>0.28 0.1</size>
+		</image>
+		
+		<image name="dividerline_top" extra="true">
+			<path>./assets/box.png</path>
+			<color>848484</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.165</pos>
+			<size>0.365 0.002</size>
+			<zIndex>71</zIndex>
+		</image>
+		
+		<textlist name="gamelist">
+			<fontPath>${systemFont}</fontPath>
+			<fontSize>0.03</fontSize>
+			<horizontalMargin>0.01</horizontalMargin>
+			<lineSpacing>2</lineSpacing>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.455</pos>
+			<zIndex>72</zIndex>
+			<size>0.365 0.525</size>
+			<selectedColor>${systemForegroundColor}</selectedColor>
+			<primaryColor>${systemForegroundColor}</primaryColor>
+			<secondaryColor>${systemForegroundColor}</secondaryColor>
+			<selectorColor>${systemForegroundColor}</selectorColor>
+			<selectorImagePath>./assets/selector.png</selectorImagePath>
+			<selectorHeight>0.06</selectorHeight>
+			<selectorOffsetY>-0.008</selectorOffsetY>
+			<alignment>left</alignment>
+		</textlist>
+		
+		<image name="gamelist_bg_placement" extra="true">
+			<path>./assets/box.png</path>
+			<color>aaaaaa00</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.44</pos>
+			<size>0.365 0.525</size>
+			<zIndex>79</zIndex>
+		</image>
+
+		<image name="dividerline_mid" extra="true">
+			<path>./assets/box.png</path>
+			<color>848484</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.735</pos>
+			<size>0.365 0.002</size>
+			<zIndex>71</zIndex>
+		</image>
+		
+		<image name="dividerline_bottom" extra="true">
+			<path>./assets/box.png</path>
+			<color>848484</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.78125 0.900</pos>
+			<size>0.365 0.002</size>
+			<zIndex>71</zIndex>
+		</image>
+		
+		<image name="help_gamelist_fave_icon" extra="true">
+			<path>./assets/buttons/button_y.svg</path>
+			<color>${systemForegroundColor}</color>
+			<pos>0.63 ${helpVertAlignment}</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.03 0.03</size>
+			<zIndex>80</zIndex>
+		</image>
+		<text name="help_gamelist_fave" extra="true">
+			<text>FAVE</text>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<pos>0.636 ${helpVertAlignment}</pos>
+			<origin>0 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<zIndex>80</zIndex>
+		</text>
+		
+		<image name="help_gamelist_random_icon" extra="true">
+			<path>./assets/buttons/button_x.svg</path>
+			<color>${systemForegroundColor}</color>
+			<pos>0.702 ${helpVertAlignment}</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.03 0.03</size>
+			<zIndex>80</zIndex>
+		</image>
+		<text name="help_gamelist_random" extra="true">
+			<text>RANDOM</text>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<pos>0.708 ${helpVertAlignment}</pos>
+			<origin>0 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<zIndex>80</zIndex>
+		</text>
+
+		<image name="help_gamelist_back_icon" extra="true">
+			<path>./assets/buttons/button_b.svg</path>
+			<color>${systemForegroundColor}</color>
+			<pos>0.805 ${helpVertAlignment}</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.03 0.03</size>
+			<zIndex>80</zIndex>
+		</image>		
+		<text name="help_gamelist_back" extra="true">
+			<text>BACK</text>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<pos>0.811 ${helpVertAlignment}</pos>
+			<origin>0 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<zIndex>80</zIndex>
+		</text>
+
+		<image name="help_gamelist_select_icon" extra="true">
+			<path>./assets/buttons/button_a.svg</path>
+			<color>${systemForegroundColor}</color>
+			<pos>0.879 ${helpVertAlignment}</pos>
+			<origin>0.5 0.5</origin>
+			<size>0.03 0.03</size>
+			<zIndex>80</zIndex>
+		</image>		
+		<text name="help_gamelist_select" extra="true">
+			<text>SELECT</text>
+			<fontPath>${systemFont}</fontPath>
+			<color>${systemForegroundColor}</color>
+			<pos>0.885 ${helpVertAlignment}</pos>
+			<origin>0 0.5</origin>
+			<fontSize>0.03</fontSize>
+			<zIndex>80</zIndex>
+		</text>
+		
+	</view>
+	
+	<view name="video">
+
+		<!-- Hide md_image when doing video previews, as md_video actualy handles images instead -->
+		<image name="md_image">
+			<visible>0</visible>
+		</image>
+		
+		<video name="md_video">
+			<origin>0.0 0.5</origin>
+			<pos>0.0 0.5</pos>
+			<maxSize>1 1</maxSize>
+			<delay>2</delay>
+			<showSnapshotNoVideo>true</showSnapshotNoVideo>
+			<showSnapshotDelay>true</showSnapshotDelay>
+			<zIndex>30</zIndex>
+		</video>
+	
+	</view>
+
+</theme>
+			
