@@ -360,7 +360,7 @@ license:		creative commons CC-BY-NC-SA
 			<origin>0.5 0.5</origin>
 			<pos>0.78125 0.455</pos>
 			<zIndex>72</zIndex>
-			<size>0.365 0.525</size>
+			<size>0.365 0.530</size>
 			<selectedColor>${systemForegroundColor}</selectedColor>
 			<primaryColor>${systemForegroundColor}</primaryColor>
 			<secondaryColor>${systemForegroundColor}</secondaryColor>
