@@ -13,10 +13,11 @@ license:		creative commons CC-BY-NC-SA
 		<systemForegroundColor>fafafa</systemForegroundColor>
 		<systemFont>./assets/fonts/Product Sans Regular.ttf</systemFont>
 		<systemFontLogo>./assets/fonts/Product Sans Bold Italic.ttf</systemFontLogo>
+		<systemImages>./assets/system_screenoff/</systemImages>
 		<helpVertAlignment>0.935</helpVertAlignment>
 	</variables>
 
-	<!-- SHARED PROPERTIES ACROSS ALL MENUS -->
+	<!-- ========== SHARED PROPERTIES ACROSS ALL MENUS ========== -->
 	
 	<view name="system, basic, detailed, video, grid">
 
@@ -54,7 +55,7 @@ license:		creative commons CC-BY-NC-SA
 		
 	</view>
 	
-	<!-- MAIN SYSTEM MENU -->
+	<!-- ========== MAIN SYSTEM MENU ========== -->
 	
 	<view name="system">
 
@@ -88,13 +89,13 @@ license:		creative commons CC-BY-NC-SA
 		<text name="logoText">
 			<fontPath>${systemFontLogo}</fontPath>
 			<color>${systemForegroundColor}</color>
-			<fontSize>0.08</fontSize>
+			<fontSize>0.06</fontSize> <!-- previously 0.08, temp fix for rendering issue -->
 			<forceUppercase>true</forceUppercase>
 		</text>		
 
 		<!-- System image (from COLORFUL videos) -->
 		<image name="system_image" extra="true">
-			<path>./assets/backgrounds/${system.theme}.png</path>
+			<path>${systemImages}${system.theme}.png</path>
 			<origin>0.5 0.5</origin>
 			<pos>0.28125 0.5</pos>
 			<maxSize>1 1</maxSize>
@@ -186,7 +187,9 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		
 	</view>
-	
+
+	<!-- ========== INDIVIDUAL GAME LIST PAGES ========== -->
+
 	<view name="basic">
 		
 		<image name="none" extra="true">
@@ -327,7 +330,7 @@ license:		creative commons CC-BY-NC-SA
 		
 		<text name="logoText">
 			<fontPath>${systemFontLogo}</fontPath>
-			<fontSize>0.08</fontSize>
+			<fontSize>0.06</fontSize> <!-- previously 0.08, temp fix for rendering issue -->
 			<color>${systemForegroundColor}</color>
 			<origin>0.5 0.5</origin>
 			<pos>0.78125 0.095</pos>	
