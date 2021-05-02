@@ -9,12 +9,21 @@ license:		creative commons CC-BY-NC-SA
 	<formatVersion>4</formatVersion>
 	
 	<variables>
+
+		<!-- Fonts -->
+		<fontLogoAlt>./assets/fonts/BreezeSans-Bold_20150728.ttf</fontLogoAlt>
+		<fontHelp>./assets/fonts/BreezeSans-Medium_20150728.ttf</fontHelp>
+		<fontSystemInfo>./assets/fonts/BreezeSans-Medium_20150728.ttf</fontSystemInfo>
+		<fontPageList>./assets/fonts/BreezeSans-RegularCondensed_20150728.ttf</fontPageList>
+		<fontPageDesc>./assets/fonts/BreezeSans-LightCondensed_20150728.ttf</fontPageDesc>
+		<fontPageInfoLabel>./assets/fonts/BreezeSans-MediumCondensed_20150728.ttf</fontPageInfoLabel>
+		<fontPageInfoText>./assets/fonts/BreezeSans-RegularCondensed_20150728.ttf</fontPageInfoText>
+
 		<systemBackgroundColor>1e1e1e</systemBackgroundColor>
 		<systemForegroundColor>fafafa</systemForegroundColor>
-		<systemFont>./assets/fonts/Product Sans Regular.ttf</systemFont>
-		<systemFontLogo>./assets/fonts/Product Sans Bold Italic.ttf</systemFontLogo>
 		<systemImages>./assets/system_screenoff/</systemImages>
 		<helpVertAlignment>0.935</helpVertAlignment>
+
 	</variables>
 
 	<!-- ========== SHARED PROPERTIES ACROSS ALL MENUS ========== -->
@@ -64,7 +73,7 @@ license:		creative commons CC-BY-NC-SA
 			<pos>0.78125 0.065</pos>
 			<origin>0.5 0.5</origin>
 			<fontSize>0.03</fontSize>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontSystemInfo}</fontPath>
 			<forceUppercase>0</forceUppercase>
 			<zIndex>80</zIndex>
 		</text>
@@ -87,7 +96,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		
 		<text name="logoText">
-			<fontPath>${systemFontLogo}</fontPath>
+			<fontPath>${fontLogoAlt}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<fontSize>0.06</fontSize> <!-- previously 0.08, temp fix for rendering issue -->
 			<forceUppercase>true</forceUppercase>
@@ -121,7 +130,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		<text name="help_system_menu" extra="true">
 			<text>MENU</text>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontHelp}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<pos>0.676 ${helpVertAlignment}</pos>
 			<origin>0 0.5</origin>
@@ -139,7 +148,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		<text name="help_system_random" extra="true">
 			<text>RANDOM</text>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontHelp}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<pos>0.756 ${helpVertAlignment}</pos>
 			<origin>0 0.5</origin>
@@ -157,7 +166,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>		
 		<text name="help_system_select" extra="true">
 			<text>SELECT</text>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontHelp}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<pos>0.861 ${helpVertAlignment}</pos>
 			<origin>0 0.5</origin>
@@ -232,10 +241,10 @@ license:		creative commons CC-BY-NC-SA
 		<text name="md_description">
 			<forceUppercase>0</forceUppercase>
 			<zIndex>72</zIndex>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontPageDesc}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<fontSize>0.024</fontSize>
-			<size>0.345 0.14</size>
+			<size>0.345 0.145</size>
 			<origin>0.5 0.5</origin>
 			<pos>0.78125 0.8175</pos>
 		</text>
@@ -243,7 +252,7 @@ license:		creative commons CC-BY-NC-SA
 		<image name="md_description_bg_placement" extra="true">
 			<path>./assets/box.png</path>
 			<color>aaaaaa00</color>
-			<size>0.345 0.14</size>
+			<size>0.345 0.145</size>
 			<origin>0.5 0.5</origin>
 			<pos>0.78125 0.8175</pos>
 			<zIndex>79</zIndex>
@@ -251,26 +260,30 @@ license:		creative commons CC-BY-NC-SA
 
 		
 		<text name="md_lbl_developer, md_developer, md_lbl_publisher, md_publisher, md_lbl_releasedate, md_lbl_players, md_players">
-			<fontPath>${systemFont}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<zIndex>71</zIndex>
 			<origin>0 1</origin>
 			<size>0.375 0.027</size>
-		</text> 
+		</text>
 		
 		<datetime name="md_releasedate">
 			<format>%Y</format>
 			<zIndex>71</zIndex>
-			<fontPath>${systemFont}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<origin>0 1</origin>
 			<size>0.375 0.027</size>
 		</datetime>
 		
-		<text name="md_lbl_developer, md_developer, md_lbl_publisher, md_publisher, md_lbl_releasedate, md_lbl_players, md_players">
+		<text name="md_lbl_developer, md_lbl_publisher, md_lbl_releasedate, md_lbl_players">
+			<fontPath>${fontPageInfoLabel}</fontPath>
+			<fontSize>0.027</fontSize>
+		</text> 
+		<text name="md_developer, md_publisher, md_players">
+			<fontPath>${fontPageInfoText}</fontPath>
 			<fontSize>0.027</fontSize>
 		</text> 
 		<datetime name="md_releasedate">			
+			<fontPath>${fontPageInfoText}</fontPath>
 			<fontSize>0.027</fontSize>
 		</datetime>
 
@@ -290,16 +303,16 @@ license:		creative commons CC-BY-NC-SA
 
 		<!--- DATA POSITIONS -->
 		<text name="md_developer">
-			<pos>0.14 0.815</pos>
+			<pos>0.13 0.815</pos>
 		</text>
 		<text name="md_publisher">
-			<pos>0.14 0.86</pos>
+			<pos>0.13 0.86</pos>
 		</text>		
 		<datetime name="md_releasedate">
-			<pos>0.14 0.905</pos>
+			<pos>0.13 0.905</pos>
 		</datetime>
 		<text name="md_players">
-			<pos>0.14 0.95</pos>
+			<pos>0.13 0.95</pos>
 		</text>
 		
 	</view>
@@ -329,7 +342,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		
 		<text name="logoText">
-			<fontPath>${systemFontLogo}</fontPath>
+			<fontPath>${fontLogoAlt}</fontPath>
 			<fontSize>0.06</fontSize> <!-- previously 0.08, temp fix for rendering issue -->
 			<color>${systemForegroundColor}</color>
 			<origin>0.5 0.5</origin>
@@ -356,21 +369,21 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		
 		<textlist name="gamelist">
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontPageList}</fontPath>
 			<fontSize>0.03</fontSize>
 			<horizontalMargin>0.01</horizontalMargin>
-			<lineSpacing>2</lineSpacing>
+			<lineSpacing>1.7</lineSpacing>
 			<origin>0.5 0.5</origin>
-			<pos>0.78125 0.455</pos>
+			<pos>0.78125 0.4625</pos>
 			<zIndex>72</zIndex>
-			<size>0.365 0.535</size>
+			<size>0.365 0.540</size>
 			<selectedColor>${systemForegroundColor}</selectedColor>
 			<primaryColor>${systemForegroundColor}</primaryColor>
 			<secondaryColor>${systemForegroundColor}</secondaryColor>
 			<selectorColor>${systemForegroundColor}</selectorColor>
 			<selectorImagePath>./assets/selector.png</selectorImagePath>
-			<selectorHeight>0.06</selectorHeight>
-			<selectorOffsetY>-0.008</selectorOffsetY>
+			<selectorHeight>0.045</selectorHeight>
+			<selectorOffsetY>0.000</selectorOffsetY>
 			<alignment>left</alignment>
 		</textlist>
 		
@@ -378,8 +391,8 @@ license:		creative commons CC-BY-NC-SA
 			<path>./assets/box.png</path>
 			<color>aaaaaa00</color>
 			<origin>0.5 0.5</origin>
-			<pos>0.78125 0.44</pos>
-			<size>0.365 0.525</size>
+			<pos>0.78125 0.4625</pos>
+			<size>0.365 0.540</size>
 			<zIndex>79</zIndex>
 		</image>
 
@@ -411,7 +424,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		<text name="help_gamelist_fave" extra="true">
 			<text>FAVE</text>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontHelp}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<pos>0.636 ${helpVertAlignment}</pos>
 			<origin>0 0.5</origin>
@@ -429,7 +442,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>
 		<text name="help_gamelist_random" extra="true">
 			<text>RANDOM</text>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontHelp}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<pos>0.708 ${helpVertAlignment}</pos>
 			<origin>0 0.5</origin>
@@ -447,7 +460,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>		
 		<text name="help_gamelist_back" extra="true">
 			<text>BACK</text>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontHelp}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<pos>0.811 ${helpVertAlignment}</pos>
 			<origin>0 0.5</origin>
@@ -465,7 +478,7 @@ license:		creative commons CC-BY-NC-SA
 		</image>		
 		<text name="help_gamelist_select" extra="true">
 			<text>SELECT</text>
-			<fontPath>${systemFont}</fontPath>
+			<fontPath>${fontHelp}</fontPath>
 			<color>${systemForegroundColor}</color>
 			<pos>0.885 ${helpVertAlignment}</pos>
 			<origin>0 0.5</origin>
