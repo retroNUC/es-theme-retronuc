@@ -14,7 +14,7 @@ license:		creative commons CC-BY-NC-SA
 		<fontLogoAlt>./assets/fonts/BreezeSans-Bold_20150728.ttf</fontLogoAlt>
 		<fontHelp>./assets/fonts/BreezeSans-Medium_20150728.ttf</fontHelp>
 		<fontSystemInfo>./assets/fonts/BreezeSans-Medium_20150728.ttf</fontSystemInfo>
-		<fontPageList>./assets/fonts/BreezeSans-RegularCondensed_20150728.ttf</fontPageList>
+		<fontPageList>./assets/fonts/BreezeSans-Regular_20150728.ttf</fontPageList>
 		<fontPageDesc>./assets/fonts/BreezeSans-LightCondensed_20150728.ttf</fontPageDesc>
 		<fontPageInfoLabel>./assets/fonts/BreezeSans-MediumCondensed_20150728.ttf</fontPageInfoLabel>
 		<fontPageInfoText>./assets/fonts/BreezeSans-RegularCondensed_20150728.ttf</fontPageInfoText>
@@ -372,11 +372,11 @@ license:		creative commons CC-BY-NC-SA
 			<fontPath>${fontPageList}</fontPath>
 			<fontSize>0.03</fontSize>
 			<horizontalMargin>0.01</horizontalMargin>
-			<lineSpacing>1.7</lineSpacing>
+			<lineSpacing>1.75</lineSpacing>
 			<origin>0.5 0.5</origin>
 			<pos>0.78125 0.4625</pos>
 			<zIndex>72</zIndex>
-			<size>0.365 0.540</size>
+			<size>0.365 0.57</size>
 			<selectedColor>${systemForegroundColor}</selectedColor>
 			<primaryColor>${systemForegroundColor}</primaryColor>
 			<secondaryColor>${systemForegroundColor}</secondaryColor>
