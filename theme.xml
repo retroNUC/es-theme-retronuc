@@ -19,9 +19,10 @@ license:		creative commons CC-BY-NC-SA
 		<fontPageInfoLabel>./assets/fonts/BreezeSans-MediumCondensed_20150728.ttf</fontPageInfoLabel>
 		<fontPageInfoText>./assets/fonts/BreezeSans-RegularCondensed_20150728.ttf</fontPageInfoText>
 
+		<systemImages>./assets/backgrounds/screenon/</systemImages>
+
 		<systemBackgroundColor>1e1e1e</systemBackgroundColor>
 		<systemForegroundColor>fafafa</systemForegroundColor>
-		<systemImages>./assets/system_screenoff/</systemImages>
 		<helpVertAlignment>0.935</helpVertAlignment>
 
 	</variables>
@@ -181,7 +182,7 @@ license:		creative commons CC-BY-NC-SA
 			<origin>0.5 0.5</origin>
 			<color>00000000</color>
 			<logoScale>1.6</logoScale>
-			<logoSize>0.16 0.58</logoSize>
+			<logoSize>0.16 0.06</logoSize>
 			<maxLogoCount>5</maxLogoCount>
 			<zIndex>80</zIndex>
 		</carousel>
@@ -338,7 +339,7 @@ license:		creative commons CC-BY-NC-SA
 			<zIndex>72</zIndex>
 			<origin>0.5 0.5</origin>
 			<pos>0.78125 0.1</pos>		
-			<maxSize>0.28 0.1</maxSize>
+			<maxSize>0.28 0.06</maxSize>
 		</image>
 		
 		<text name="logoText">
