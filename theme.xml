@@ -25,22 +25,15 @@ license:		creative commons CC-BY-NC-SA
 		<systemForegroundColor>fafafa</systemForegroundColor>
 		<helpVertAlignment>0.935</helpVertAlignment>
 
+		<debugVisible>0</debugVisible>
+
 	</variables>
 
 	<!-- ========== SHARED PROPERTIES ACROSS ALL MENUS ========== -->
 	
 	<view name="system, basic, detailed, video, grid">
 
-		<!-- Solid background using system color -->
-		<image name="safe_check" extra="true">
-			<path>./assets/safearea.png</path>
-			<pos>0 0</pos>
-			<size>1 1</size>
-			<zIndex>100</zIndex>
-			<visible>0</visible>
-		</image>
-	
-		<!-- Solid background using system color -->
+		<!-- Solid background using system color, rendered behind everything else -->
 		<image name="background_color" extra="true">
 			<path>./assets/box.png</path>
 			<color>${systemBackgroundColor}</color>
@@ -48,7 +41,16 @@ license:		creative commons CC-BY-NC-SA
 			<size>1 1</size>
 			<zIndex>1</zIndex>
 		</image>
-	
+
+		<!-- Safe area debug check, rendered on top of everything else -->
+		<image name="safe_area" extra="true">
+			<path>./assets/safearea.png</path>
+			<pos>0 0</pos>
+			<size>1 1</size>
+			<zIndex>100</zIndex>
+			<visible>${debugVisible}</visible>
+		</image>
+
 	</view>
 	
 	<view name="system, basic, detailed, video">
@@ -200,20 +202,21 @@ license:		creative commons CC-BY-NC-SA
 
 	<!-- ========== INDIVIDUAL GAME LIST PAGES ========== -->
 
-	<view name="basic">
-		
-		<image name="none" extra="true">
-			<path>./assets/default.png</path>
-			<zIndex>69</zIndex>
-			<pos>0 0</pos>
-			<size>0.6 1</size>
-		</image>
-		
-	</view>
-	
-	<view name="detailed, video">
+	<!-- === Side Image - zIndex of 30 === -->
 
-		<!-- Black background behind any preview image/video in case the resize don't fill the space -->
+	<!-- BASIC: Just show the system image -->
+	<view name="basic">
+		<image name="system_image" extra="true">
+			<path>${systemImages}${system.theme}.png</path>
+			<origin>0.5 0.5</origin>
+			<pos>0.28125 0.5</pos>
+			<maxSize>1 1</maxSize>
+			<zIndex>30</zIndex>
+		</image>
+	</view>
+
+	<!-- DETAILED/VIDEO: Black background behind any image/video in case resize doesn't fill space -->	
+	<view name="detailed, video">
 		<image name="md_image_bg" extra="true">
 			<path>./assets/box.png</path>
 			<color>000000</color>
@@ -221,17 +224,38 @@ license:		creative commons CC-BY-NC-SA
 			<pos>0.28125 0.5</pos>
 			<size>0.5625 1</size>
 			<zIndex>29</zIndex>
-		</image>		
-		
-		<!-- Expand from the left to max height, as keeping left-side of any game UI looks better than a fully-centered image -->
-		<!-- The 'arcade' content directory overrides this to work better for a mix of landscape and portrait images -->
+		</image>
+	</view>
+
+	<!-- DETAILED: Individual game screenshot, expanding from left to max height (keeping left-side of game UI usually looks better than a fully-centred image) -->
+	<!-- The 'arcade' content directory overrides this to work better for a mix of landscape and portrait images -->
+	<view name="detailed">
 		<image name="md_image">
 			<origin>0.0 0.5</origin>
 			<pos>0.0 0.5</pos>
 			<maxSize>1 1</maxSize>
 			<zIndex>30</zIndex>
 		</image>
-		
+	</view>
+
+	<!-- DETAILED: Individual game video, hiding md_image (as md_video handles images as well) -->
+	<view name="video">
+		<image name="md_image">
+			<visible>0</visible>
+		</image>	
+		<video name="md_video">
+			<origin>0.0 0.5</origin>
+			<pos>0.0 0.5</pos>
+			<maxSize>1 1</maxSize>
+			<delay>2</delay>
+			<showSnapshotNoVideo>true</showSnapshotNoVideo>
+			<showSnapshotDelay>true</showSnapshotDelay>
+			<zIndex>30</zIndex>
+		</video>
+	</view>
+
+	<view name="detailed, video">
+
 		<image name="md_marquee" extra="true">
 			<origin>0.5 0.5</origin>
 			<zIndex>72</zIndex>
@@ -259,7 +283,20 @@ license:		creative commons CC-BY-NC-SA
 			<zIndex>79</zIndex>
 		</image>
 
-		
+		<image name="gradientbar" extra="true">
+			<path>./assets/box.png</path>
+			<color>00000095</color>
+			<origin>0 1</origin>
+			<pos>0 1</pos>
+			<size>0.78125 0.265</size>
+			<zIndex>31</zIndex>
+		</image>
+
+		<!-- HIDE UNUSED LABELS-->
+		<text name="md_lbl_lastplayed, md_lbl_rating, md_lbl_playcount, md_playcount">
+			<pos>1 1</pos>
+		</text>
+
 		<text name="md_lbl_developer, md_developer, md_lbl_publisher, md_publisher, md_lbl_releasedate, md_lbl_players, md_players">
 			<color>${systemForegroundColor}</color>
 			<zIndex>71</zIndex>
@@ -319,20 +356,6 @@ license:		creative commons CC-BY-NC-SA
 	</view>
 	
 	<view name="basic, detailed, video">
-		
-		<image name="gradientbar" extra="true">
-			<path>./assets/box.png</path>
-			<color>00000095</color>
-			<origin>0 1</origin>
-			<pos>0 1</pos>
-			<size>0.78125 0.265</size>
-			<zIndex>31</zIndex>
-		</image>
-		
-		<!-- HIDE UNUSED LABELS-->
-		<text name="md_lbl_lastplayed, md_lbl_rating, md_lbl_playcount, md_playcount">
-			<pos>1 1</pos>
-		</text>
 		
 		<image name="logo">		
 			<path>./assets/logos/${system.theme}.svg</path>		
@@ -487,25 +510,6 @@ license:		creative commons CC-BY-NC-SA
 			<zIndex>80</zIndex>
 		</text>
 		
-	</view>
-	
-	<view name="video">
-
-		<!-- Hide md_image when doing video previews, as md_video actualy handles images instead -->
-		<image name="md_image">
-			<visible>0</visible>
-		</image>
-		
-		<video name="md_video">
-			<origin>0.0 0.5</origin>
-			<pos>0.0 0.5</pos>
-			<maxSize>1 1</maxSize>
-			<delay>2</delay>
-			<showSnapshotNoVideo>true</showSnapshotNoVideo>
-			<showSnapshotDelay>true</showSnapshotDelay>
-			<zIndex>30</zIndex>
-		</video>
-	
 	</view>
 
 </theme>
